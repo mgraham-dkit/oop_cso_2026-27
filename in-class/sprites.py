@@ -15,6 +15,9 @@ class Enemy:
         print(f"x_pos: {self.__x_pos}")
         print(f"y_pos: {self.__y_pos}")
 
+    def __str__(self) -> str:
+        return f"{self.enemy_type} at ({self.__x_pos, self.__y_pos}) : {self.health} health left"
+
 
 if __name__ == "__main__":
     first_enemy = Enemy("lightning", 100, 90, -100)
@@ -36,3 +39,5 @@ if __name__ == "__main__":
     print("no y pos:")
     no_y_pos = Enemy("water", 500, 88)
     no_y_pos.display()
+
+    print(f"First enemy: {first_enemy}")

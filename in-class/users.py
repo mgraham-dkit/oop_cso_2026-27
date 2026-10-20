@@ -26,6 +26,9 @@ class User:
 
         return True, ""
 
+    def __str__(self) -> str:
+        return f"{self.username}"
+
 
 if __name__ == "__main__":
     password = "Passw0rd!"
@@ -49,3 +52,5 @@ if __name__ == "__main__":
         print("Valid pword")
     else:
         print(msg)
+
+    print(f"User1: {user1}")
