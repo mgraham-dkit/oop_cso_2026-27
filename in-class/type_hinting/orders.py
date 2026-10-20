@@ -3,6 +3,14 @@ class Pizza:
     _sizes: list[str] = ["small", "medium", "large", "extra-large"]
 
     def __init__(self, toppings: list[str], size: str="medium"):
+        """
+        Initialises a Pizza object with the supplied toppings list and specified size.
+        Where the specified size is not valid (not found within Pizza._sizes),
+        size is defaulted to "medium"
+        Args:
+            toppings (list[str]) : The list of toppings for this pizza (may be None/empty)
+            size (str) : The size of the new Pizza. Default value is "medium"
+        """
         if size.lower() in Pizza._sizes:
             self._size = size
         else:
@@ -12,6 +20,15 @@ class Pizza:
 
     @classmethod
     def validate_size(cls, size:str) -> bool:
+        """
+        Confirms supplied size is a valid option (case-insensitive).
+        Valid options are defined within the Pizza._sizes static variable.
+        Args:
+            size (str) : the size to be validated
+        Returns:
+            True if the supplied size is valid (found within Pizza._sizes),
+            False otherwise
+        """
         if size.lower() in cls._sizes:
             return True
 
