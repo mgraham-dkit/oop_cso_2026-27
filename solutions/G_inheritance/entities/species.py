@@ -102,11 +102,11 @@ class Dog(Animal):
         # Have to handle comparison differently due to case-insensitivity
         # on potentially None fields
         # If either one is None, compare without using lower()
-        if not self.breed or not other.breed:
-            return self.breed != other.breed
+        if not self.personality or not other.personality:
+            return self.personality != other.personality
 
         # If both are real, compare actual data case-insensitively
-        if self.breed.lower() != other.breed.lower():
+        if self.personality.lower() != other.personality.lower():
             return False
 
         return True
