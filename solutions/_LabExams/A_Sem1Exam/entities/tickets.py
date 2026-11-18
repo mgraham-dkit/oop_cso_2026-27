@@ -83,7 +83,7 @@ class Screening:
     def __hash__(self) -> int:
         # Whatever is used as the equality comparison for eq is what we use for hash
         # As eq used only the screening_id, we only pass that into the hash calculation process
-        return hash(self._screening_id)
+        return hash(self._screening_id.lower())
 
     # We want access to the screening details for the Booking to be able to display it, so we need to create getters:
     def get_screening_time(self) -> time:
